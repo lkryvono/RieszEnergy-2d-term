@@ -1,0 +1,43 @@
+{
+  "challenge_module": "Showcase",
+  "solution_module": "Showcase_WithProofs",
+  "theorem_names": [
+    "RieszShowcase.main_theorem"
+  ],
+  "definition_names": [
+    "RieszShowcase.Rd",
+    "RieszShowcase.Sphere",
+    "RieszShowcase.SphereConfiguration",
+    "RieszShowcase.chord",
+    "RieszShowcase.rieszEnergy",
+    "RieszShowcase.E_s",
+    "RieszShowcase.K_s",
+    "RieszShowcase.E_K",
+    "RieszShowcase.omega",
+    "RieszShowcase.V_s",
+    "RieszShowcase.V_K",
+    "RieszShowcase.IsSimpleConfiguration",
+    "RieszShowcase.ConfigurationLaw",
+    "RieszShowcase.IsStationary",
+    "RieszShowcase.Admissible",
+    "RieszShowcase.cube",
+    "RieszShowcase.Q",
+    "RieszShowcase.B",
+    "RieszShowcase.gaussianRemainder",
+    "RieszShowcase.gamma_s",
+    "RieszShowcase.c0",
+    "RieszShowcase.W",
+    "RieszShowcase.eExtended",
+    "RieszShowcase.e",
+    "RieszShowcase.C",
+    "RieszShowcase.BalancedAdmissible",
+    "RieszShowcase.D_q",
+    "RieszShowcase.b"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
