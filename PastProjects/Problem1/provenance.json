@@ -1,0 +1,94 @@
+{
+  "source_project": "Problem 1 - Part 1",
+  "lean_toolchain": "leanprover/lean4:v4.32.2",
+  "mathlib_commit": "905b95818eb32af7874a58b427f50c1711a5e96c",
+  "transformations": "Only imports changed. Full Mathlib is replaced by MathlibImports.lean. EnergyLower retains two verbatim source blocks and closes the existing namespace. No theorem statement or proof changed. Gamma.lean retains verbatim lines 3370-3375 of Part3, with an import and namespace wrapper.",
+  "files": [
+    {
+      "source": "Problem 1 - Part 1/Problem1/Part1_Foundations.lean",
+      "source_sha256": "6F236939CD971507FD3A4522E4F687CDEB9F831CB70F69FC9A66A1FBE9E32AFD",
+      "destination": "Riesz/PastProjects/Problem1/Foundations.lean",
+      "destination_sha256": "2444e420216f610a22b02d0fdf3d9303e2de19239a316a1a2089b7315f44a18d",
+      "retained_source_lines": [],
+      "original_destination_sha256": "2444E420216F610A22B02D0FDF3D9303E2DE19239A316A1A2089B7315F44A18D"
+    },
+    {
+      "source": "Problem 1 - Part 1/Problem1/Part2_Sphere_and_Harmonic_Core.lean",
+      "source_sha256": "8C2481A62E0BCAE7FC0D62D2DA24DCFFD9960EC91BACAF65BD80263BD15E012E",
+      "destination": "Riesz/PastProjects/Problem1/Sphere.lean",
+      "destination_sha256": "bc0354dbbc1654187eb5f283ede1d32b3e764fa78ad8021af49d8bc97e6e005e",
+      "retained_source_lines": [],
+      "original_destination_sha256": "BC0354DBBC1654187EB5F283EDE1D32B3E764FA78AD8021AF49D8BC97E6E005E"
+    },
+    {
+      "source": "Problem 1 - Part 1/Problem1/Part5_Polarization_and_Energy.lean",
+      "source_sha256": "885B370DDCE4361B065166097D2CB9BFFE0E1B36826AAD572BA58F7A76A4D0C4",
+      "destination": "Riesz/PastProjects/Problem1/EnergyLower.lean",
+      "destination_sha256": "a54a42553a288d86fe3a6f5138d58260e0d7dee7554e89896f1e7c8f5614b9fa",
+      "retained_source_lines": [
+        [
+          1,
+          107
+        ],
+        [
+          560,
+          2334
+        ]
+      ],
+      "original_destination_sha256": "A54A42553A288D86FE3A6F5138D58260E0D7DEE7554E89896F1E7C8F5614B9FA"
+    },
+    {
+      "source": "Problem 1 - Part 1/Problem1/Part3_Harmonics_and_Spectrum.lean",
+      "source_sha256": "17DD186BBD195CBB17FC1F8A9BA24F8A77BC8CF0929EE873B71BD11C7D1D9EA9",
+      "destination": "Riesz/PastProjects/Problem1/Gamma.lean",
+      "retained_source_lines": [
+        [
+          3370,
+          3375
+        ]
+      ],
+      "wrapper": "import Sphere; noncomputable section; namespace Problem1; verbatim source block; end Problem1",
+      "destination_sha256": "26829a09bb0db185e326ac0bfc4d8a816ebae68a67e5ad35b089c97a76bbc968",
+      "original_destination_sha256": "26829A09BB0DB185E326AC0BFC4D8A816EBAE68A67E5AD35B089C97A76BBC968"
+    },
+    {
+      "source": "Problem 1 - Part 1/Problem1/Part5_Polarization_and_Energy.lean",
+      "source_sha256": "885B370DDCE4361B065166097D2CB9BFFE0E1B36826AAD572BA58F7A76A4D0C4",
+      "destination": "Riesz/Geometry/CountRepairFromProblem1.lean",
+      "destination_sha256": "175f62a5f8e2204e3b4f63393a090522b05ed65a03f6c0893a6a913182855074",
+      "retained_source_lines": [
+        [
+          2336,
+          2354
+        ],
+        [
+          2357,
+          2362
+        ],
+        [
+          2372,
+          2374
+        ],
+        [
+          2376,
+          2381
+        ],
+        [
+          2383,
+          2388
+        ],
+        [
+          2402,
+          2407
+        ],
+        [
+          2456,
+          2509
+        ]
+      ],
+      "transformations": "The seven listed declaration blocks are retained verbatim, including their original statements and proof bodies. Imports and namespace wrappers are new. The Riesz.Geometry declarations following the extracted blocks are new adapter and deterministic scalar count-repair proofs, using the exact Showcase energy without a minEnergy equality bridge.",
+      "original_destination_sha256": "1701F0251B86E52A77109F13C2B44F62E94FA0427B41D24C8B51C567E4AB7EAE"
+    }
+  ],
+  "packaging": "Source paths are relative to the original project. Destination hashes describe the packaged files. Original proof bodies are preserved; a machine-specific source path was removed from a comment in CountRepairFromProblem1.lean."
+}
