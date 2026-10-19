@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/mrdouglasny/bochner",
+  "commit": "58405ecd328cf8383a1c0b53d37605fe61a0b3f6",
+  "license": "Apache-2.0",
+  "adaptation": "Only import Bochner.* changed to import Riesz.Analysis.Bochner.*; all proof bodies and copyright headers unchanged.",
+  "pinned_lean": "leanprover/lean4:v4.32.2",
+  "pinned_mathlib": "905b95818eb32af7874a58b427f50c1711a5e96c",
+  "files": [
+    {
+      "source": "https://raw.githubusercontent.com/mrdouglasny/bochner/58405ecd328cf8383a1c0b53d37605fe61a0b3f6/Bochner/PositiveDefinite.lean",
+      "destination": "Riesz/Analysis/Bochner/PositiveDefinite.lean",
+      "upstream_sha256": "13745b5e6bf263705f76456d61510faaa5a75d270f87c766b32b6fcac725498c",
+      "adapted_sha256": "13745b5e6bf263705f76456d61510faaa5a75d270f87c766b32b6fcac725498c"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/mrdouglasny/bochner/58405ecd328cf8383a1c0b53d37605fe61a0b3f6/Bochner/FejerPD.lean",
+      "destination": "Riesz/Analysis/Bochner/FejerPD.lean",
+      "upstream_sha256": "bb33d6a711741c08740877addf8683622c837482d162d71f89179eee1bcc748c",
+      "adapted_sha256": "d9cab6c2d1265ee0bb3ce8c1c5e2946e7978523257061819916e1ba7ba3ba047"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/mrdouglasny/bochner/58405ecd328cf8383a1c0b53d37605fe61a0b3f6/Bochner/Main.lean",
+      "destination": "Riesz/Analysis/Bochner/Main.lean",
+      "upstream_sha256": "8607c4b0a529466ab45c9b65927c60e5d8f160935747646cc9a3bb50af3f18e4",
+      "adapted_sha256": "d9ace6845ff6206e427040d12b4c17ea1fef6d0e5095f32afe1730b57da91559"
+    }
+  ]
+}
