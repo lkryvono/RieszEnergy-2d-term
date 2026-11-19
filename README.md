@@ -74,18 +74,6 @@ e_{s,d}<0\quad\text{if }0<s<d,
 e_{s,d}>0\quad\text{if }-2<s<0.
 $$
 
-For $s=-q$, $0<q<2$, the theorem also proves the finite-volume characterization
-
-$$
-e_{-q,d}
-=\lim_{m\to\infty}\frac{b_{d,q}(m)}{m^d}
-=\inf_{m\geq 1}\frac{b_{d,q}(m)}{m^d},
-$$
-
-where $m$ ranges over positive integers and $b_{d,q}(m)$ is the infimum of the
-expected discrepancy energy over random configurations of exactly $m^d$
-distinct points in $[0,m)^d$ whose mean counting measure is Lebesgue measure
-on that cube, as defined in Section 6 of the paper.
 
 This establishes the existence of the second-order coefficient conjectured by
 Brauchart, Hardin, and Saff. The conjectured formulas for that coefficient in
