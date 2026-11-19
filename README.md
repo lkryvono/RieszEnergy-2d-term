@@ -43,7 +43,7 @@ $$
 \mathcal{E}_s(\mathbb{S}^d;N)
 =V_s(\mathbb{S}^d)N^2
 +\frac{e_{s,d}}{\omega_d^{s/d}}N^{1+s/d}
-+o\!\left(N^{1+s/d}\right),
++o \left(N^{1+s/d}\right),
 \qquad N\to\infty.
 $$
 
