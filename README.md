@@ -1,6 +1,110 @@
-# Build and verification
+# Second order term of Riesz energy on sphere
 
-## Lean entry points
+This repository contains a Lean 4 formalization of the main result of the paper
+*Second order term of Riesz energy on sphere* by Damien Galant, Javier
+Gómez-Serrano, Alexander Kaneko, Liudmyla Kryvonos, Lukas Liehr, and Mitchell A.
+Taylor.
+
+## Lean-verified main result
+
+Let $d\geq 2$ and $-2<s<d$, with $s\neq 0$. For a configuration
+$X=\{x_1,\ldots,x_N\}$ of $N$ distinct points on the unit sphere
+$\mathbb{S}^d\subset\mathbb{R}^{d+1}$, define
+
+$$
+K_s(x,y)=\frac{1}{s}\lVert x-y\rVert^{-s},
+\qquad
+E_s(X)=\sum_{i\neq j}K_s(x_i,x_j),
+\qquad
+\mathcal{E}_s(\mathbb{S}^d;N)
+=\inf_{\substack{X\subset\mathbb{S}^d\\ |X|=N}}E_s(X).
+$$
+
+The sum is over ordered pairs of distinct points, and the distance is chordal.
+For $s>0$, this is the usual Riesz energy minimization problem; for $s<0$, it
+is equivalent to maximizing the sum of the distance powers.
+Let $\sigma_d$ be normalized surface measure, and write
+
+$$
+V_s(\mathbb{S}^d)
+=\int_{\mathbb{S}^d}\int_{\mathbb{S}^d}
+K_s(x,y)\,d\sigma_d(x)\,d\sigma_d(y),
+\qquad
+\omega_d=\mathcal{H}^d(\mathbb{S}^d).
+$$
+
+We provide a Lean verification of the following statement, which includes
+Theorem 1.1 of the paper.
+
+**Theorem.** For every integer $d\geq 2$ and every real $-2<s<d$, $s\neq 0$,
+there is a finite constant $e_{s,d}$ such that
+
+$$
+\mathcal{E}_s(\mathbb{S}^d;N)
+=V_s(\mathbb{S}^d)N^2
++\frac{e_{s,d}}{\omega_d^{s/d}}N^{1+s/d}
++o\!\left(N^{1+s/d}\right),
+\qquad N\to\infty.
+$$
+
+Equivalently,
+
+$$
+\lim_{N\to\infty}
+\omega_d^{s/d}
+\frac{\mathcal{E}_s(\mathbb{S}^d;N)-V_s(\mathbb{S}^d)N^2}
+     {N^{1+s/d}}
+=e_{s,d}.
+$$
+
+Moreover,
+
+$$
+e_{s,d}=\inf_{P\in\mathcal{P}_d}W_{s,d}(P),
+$$
+
+where $\mathcal{P}_d$ is the class of stationary simple point processes in
+$\mathbb{R}^d$ with intensity one and finite local second moments, and
+$W_{s,d}$ is the Euclidean energy defined in Section 4 of the paper. This
+infimum is attained by a process in $\mathcal{P}_d$, and
+
+$$
+e_{s,d}<0\quad\text{if }0<s<d,
+\qquad
+e_{s,d}>0\quad\text{if }-2<s<0.
+$$
+
+For $s=-q$, $0<q<2$, the theorem also proves the finite-volume characterization
+
+$$
+e_{-q,d}
+=\lim_{m\to\infty}\frac{b_{d,q}(m)}{m^d}
+=\inf_{m\geq 1}\frac{b_{d,q}(m)}{m^d},
+$$
+
+where $m$ ranges over positive integers and $b_{d,q}(m)$ is the infimum of the
+expected discrepancy energy over random configurations of exactly $m^d$
+distinct points in $[0,m)^d$ whose mean counting measure is Lebesgue measure
+on that cube, as defined in Section 6 of the paper.
+
+This establishes the existence of the second-order coefficient conjectured by
+Brauchart, Hardin, and Saff. The conjectured formulas for that coefficient in
+terms of particular lattices remain open.
+
+The formal statement is
+[`RieszShowcase.main_theorem`](Showcase_WithProofs.lean). In the Lean files,
+the paper's $\mathcal{E}_s$ and $V_s$ are named `E_K` and `V_K`.
+The names `E_s` and `V_s` refer to energies without the factor $1/s$;
+the theorem also gives their asymptotic expansion with coefficient
+$C_{s,d}=s\,e_{s,d}<0$.
+
+**Dependencies:** The proved theorem depends only on `propext`,
+`Classical.choice`, and `Quot.sound`, as checked by
+[ProofAudit.lean](ProofAudit.lean).
+
+## Build and verification
+
+### Lean entry points
 
 | File | Purpose |
 | --- | --- |
@@ -16,7 +120,7 @@ separately: they deliberately use the same declaration names. To use the proved
 public theorem in another Lean file, write `import Showcase_WithProofs`.
 The proof library and axiom audit do not import the statement-only showcase.
 
-## Build
+### Build
 
 Install [elan](https://github.com/leanprover/elan), the Lean toolchain manager,
 and Git. In the repository root, run:
@@ -49,7 +153,7 @@ lake env lean ProofAudit.lean
 
 The `#guard_msgs` check makes a changed axiom report a build error.
 
-## Repository layout
+### Repository layout
 
 | Path | Contents |
 | --- | --- |
@@ -63,7 +167,7 @@ The `#guard_msgs` check makes a changed axiom report a build error.
 | [Riesz/Stationary/](Riesz/Stationary/) | Stationary laws, Gaussian energies, and localization. |
 | [Riesz/PastProjects/Problem1/](Riesz/PastProjects/Problem1/) | Reused supporting lemmas and their provenance record. |
 
-## Reused source notices
+### Reused source notices
 
 The Bochner modules retain their existing copyright headers, upstream
 [provenance](Riesz/Analysis/Bochner/provenance.json), and
